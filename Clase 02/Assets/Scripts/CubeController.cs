@@ -9,11 +9,8 @@ namespace Assets.Scripts
     {
         [SerializeField]
         private int angle;
-        [SerializeField]
         private int speed;
 
-
-        public int Speed { get => this.speed; }
 
         private void Awake()
         {
@@ -23,10 +20,11 @@ namespace Assets.Scripts
 
         private void Initialized()
         {
-            if(this.angle < 1)
+            if (this.angle < 1)
             {
                 this.angle = 1;
             }
+            this.speed = 1;
         }
 
         //Se invoca la primera vez cuando se activa el GameObject
@@ -34,17 +32,11 @@ namespace Assets.Scripts
         // Update is called once per frame
         private void Update()
         {
-            ((IMoveable)this).Move();
-            ((IMoveable)this).Rotate();
+           ((IMoveable)this).Move();
         }
         void IMoveable.Move()
         {
-            base.transform.position += new Vector3(Speed, 0, 0);
-            if (base.transform.position.x > 100)
-            {
-                base.transform.position = new Vector3(0, 0, 0);
-            }
-            System.Threading.Thread.Sleep(50);
+            ((IMoveable)this).Rotate();
         }
 
         void IMoveable.Rotate()

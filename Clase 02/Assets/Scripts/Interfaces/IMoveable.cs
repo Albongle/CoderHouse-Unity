@@ -8,7 +8,6 @@ namespace Assets.Scripts.Interfaces
 {
     public interface IMoveable
     {
-        int Speed { get; }
         void Move();
         void Rotate();
     }

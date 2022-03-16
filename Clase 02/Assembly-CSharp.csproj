@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\SphereController.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IMoveable.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IResizing.cs" />
     <Compile Include="Assets\Scripts\CubeController.cs" />
   </ItemGroup>
   <ItemGroup>
